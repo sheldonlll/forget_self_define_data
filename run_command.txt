@@ -1,0 +1,7 @@
+python ./run_mnist.py --epochs 20 --lr 0.02 --seed 1 --sorting_file none --remove_n 0 --keep_lowest_n 0 --input_dir svm_results/ --output_dir svm_results --n_samples 1000 --n_features 2 --n_informative 2 --n_redundant 0 --ratio 0.2 --random_por 1.0 --n_classes 2 --n_clusters_per_class 1 --random_state None --train_batch_size 128 --test_batch_size 128 --test_size 0.2 --train_ratio 0.8
+
+
+python order_examples_by_forgetting.py --output_dir svm_results --output_name svm_sorted --input_dir svm_results --input_fname_args remove_n 0 keep_lowest_n 0
+
+
+python ./run_mnist.py --epochs 20 --lr 0.02 --seed 1 --sorting_file svm_sorted --remove_n 160 --keep_lowest_n 0 --input_dir svm_results/ --output_dir svm_results --n_samples 1000 --n_features 2 --n_informative 2 --n_redundant 0 --ratio 0.2 --random_por 1.0 --n_classes 2 --n_clusters_per_class 1 --random_state None --train_batch_size 128 --test_batch_size 128 --test_size 0.2 --train_ratio 0.8
