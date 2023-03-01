@@ -1,6 +1,6 @@
 # Forget Self Define Data
 
-1. 全部数据训练全部epochs，并保存训练结果
+1.全部数据训练全部epochs，并保存训练结果
 
 python ./run_svm.py --epochs 20 --lr 0.02 --seed 1 --sorting_file none --remove_n 0 --keep_lowest_n 0 --input_dir svm_results/ --output_dir svm_results --n_samples 1000 --n_features 2 --n_informative 2 --n_redundant 0 --ratio 0.2 --random_por 1.0 --n_classes 2 --n_clusters_per_class 1 --random_state None --train_batch_size 128 --test_batch_size 128 --test_size 0.2 --train_ratio 0.8
 
